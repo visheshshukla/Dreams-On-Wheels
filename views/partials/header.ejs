@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Dreams On Wheels</title>
+		<link rel="stylesheet" type="text/css" href="/stylesheet/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="/stylesheet/main.css">
+		<!-- Mapbox API links -->
+		<script src="https://api.mapbox.com/mapbox-gl-js/v1.9.1/mapbox-gl.js"></script>
+		<link href="https://api.mapbox.com/mapbox-gl-js/v1.9.1/mapbox-gl.css" rel="stylesheet" />
+	</head>
+	<body>
+	
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="/showrooms">
+					<span class="glyphicon glyphicon-cd" aria-hidden="true"></span> 
+					Dreams On Wheels <span class="glyphicon glyphicon-cd" aria-hidden="true"></span></a>
+			</div>
+			<div class="collapse navbar-collapse">
+				<ul class="nav navbar-nav navbar-right">
+				<% if(!currentUser){ %>
+				<li class="nav-item"><a class="nav-link" href="/login"> Login </a></li>
+				<li class="nav-item"><a class="nav-link" href="/register"> Sign Up </a></li>
+				<% } else { %>
+				<li class="nav-item"><a href="/users/<%= currentUser._id %>"> User Profile </a></li>
+				<li class="nav-item"><a class="nav-link" href="/logout"> Logout </a></li>
+				<% } %>
+    			</ul>
+			</div>
+		</div>
+	</nav>
+	
+	<div class="container">
+		<%if(success && success.length > 0){%>
+		<div class="alert alert-success" role="alert"> <%= success %> </div>
+		<% } %>
+	</div>
+		
+	<div class="container">
+		<%if(error && error.length > 0){%>
+		<div class="alert alert-danger" role="alert"> <%= error %> </div>
+		<% } %>
+	</div>
