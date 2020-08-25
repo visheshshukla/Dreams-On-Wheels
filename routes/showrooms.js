@@ -8,6 +8,7 @@ var storage = multer.diskStorage({
     callback(null, Date.now() + file.originalname);
   }
 });
+
 var imageFilter = function (req, file, cb) {
     // accept image files only
     if (!file.originalname.match(/\.(jpg|jpeg|png|gif)$/i)) {
@@ -15,14 +16,11 @@ var imageFilter = function (req, file, cb) {
     }
     cb(null, true);
 };
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 var upload = multer({ storage: storage, fileFilter: imageFilter});
 
-var cloudinary = require('cloudinary');
-cloudinary.config({ 
-  cloud_name: 'vishesh123', 
-  api_key: '337284363655642', 
-  api_secret: 'KoPK4fQ4jcSbm1wr5Sqtfeem3dU'
-});
 
 var rp				= require('request-promise');
 var cors            = require('cors');
@@ -66,7 +64,7 @@ router.post("/showrooms", middleware.isLoggedIn, upload.single('image'), functio
         username: req.user.username
       }
 		//sending location data to mapbox
-	   rp(`https://api.mapbox.com/geocoding/v5/mapbox.places/${req.body.showroom.location}.json?access_token=pk.eyJ1IjoidmlzaGVzaHNodWtsYSIsImEiOiJja2FiMmtwdTEwaWMwMnFwOWtvc2JqdzIwIn0.FqIGVR3NFY49AO45gWvVSw`)
+	   rp(``)++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 		.then(resp=>JSON.parse(resp))
 		.then(result=>{
 		//getting latitude and longitude then adding it to showroom template
@@ -122,7 +120,7 @@ router.put("/showrooms/:id", middleware.isRightUser, upload.single('image'), fun
 	//Getting the location form using req.body.showroom
 	const location = req.body.showroom.location;
 	//sending location data to mapbox
-	rp(`https://api.mapbox.com/geocoding/v5/mapbox.places/${location}.json?access_token=pk.eyJ1IjoidmlzaGVzaHNodWtsYSIsImEiOiJja2FiMmtwdTEwaWMwMnFwOWtvc2JqdzIwIn0.FqIGVR3NFY49AO45gWvVSw`)
+	rp(``)+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 		.then(resp=>JSON.parse(resp))
 		.then(result=>{
 		//getting latitude and longitude
