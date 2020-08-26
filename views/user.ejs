@@ -1,0 +1,40 @@
+<%- include("partials/header.ejs")%>
+
+<div class="row">
+		<div class="form-group">	
+					<button class="btn btn-lg btn-primary btn-block" 
+					onclick="window.location.reload();"> User Profile </button>
+		</div>
+		<div class="col-md-4">
+			<h1> <u>Name</u> - <%= user.fname + " " + user.lname %> </h1>
+		<div class="thumbnail">
+			<img src="<%= user.avatar %>" alt="user profile image">
+		</div>	
+	</div>
+	<div class="col-md-4">
+		<div>
+			<% if(user.admin){ %>
+			<h3><u>User Rights</u> - Admin </h3>
+			<% } else { %>
+			<h3><u>User Rights</u> - Non-Admin </h3>
+			<% } %>
+			<h3><u>Date Of Birth</u> - <%= user.dob %> </h3>
+			<h3><u>Email Id</u> - <%= user.email %> </h3>
+			<h3><u>About You</u> - <%= user.about %> </h3>
+			<% if(currentUser && (user.id.str === currentUser._id.str)){ %>
+			<div class="pull-right">
+			<input class="btn btn-sm btn-success" type="button" value=" Edit Profile " 			            									onclick="window.location.href='/users/<%= currentUser._id %>/edit'">
+			</div>
+			<% } %>	
+			<br>
+		</div>
+		<h2> <u>Your Showrooms</u> : </h2>
+		<ul>
+			<% showrooms.forEach(function(showroom) { %>
+			<li> <h3> <a href="/showrooms/<%= showroom.id %>"> <%= showroom.name %> </a> </h3> </li>
+			<% }); %>
+		</ul>	
+	</div>
+</div>
+
+<%- include("partials/footer.ejs")%>
