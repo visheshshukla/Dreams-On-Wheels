@@ -1,0 +1,36 @@
+.thumbnail img {
+	width: 100%;
+}
+
+.thumbnail{
+	padding: 0;
+}
+
+.thumbnail .caption-full{
+	padding: 9px;
+}
+
+#deleteShowroom{
+	display: inline;
+}
+
+#deleteComment{
+	display: inline;
+}
+
+#EditAndDeleteShowroom{
+	display:inline;
+}
+
+/*to remove arrows in contact no input*/
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+#map { 
+	height: 500px;
+	width: 100%; 
+	margin-top: 1rem;
+}
