@@ -43,6 +43,30 @@ middlewareObj.isRightUser = function(req, res, next){
 }
 
 
+middlewareObj.isRightUserComment = function(req, res, next){
+	if(req.isAuthenticated()){
+		Comment.findById(req.params.c_id, function(err, foundComment){
+		if(err){
+			res.redirect("back");
+		}
+		else{
+			//Check If User Owns The Comment
+			if(foundComment.author.id.equals(req.user._id) || req.user.admin){
+				next();
+			}
+			else{
+				req.flash("error","You Do Not Have Permission.");
+				res.redirect("back");
+			}
+		}
+		});	
+	}
+	else{
+		req.flash("error","Please Login First!");
+		res.redirect("back");
+	}
+}
+
 
 
 module.exports = middlewareObj;
