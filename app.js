@@ -42,6 +42,17 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 
+//Middleware
+//Passing User Login Info To All Routes And Header(Login, Logout)
+app.use(function(req, res, next){
+   res.locals.currentUser = req.user; //passing to all routes and show showroom
+   res.locals.success = req.flash('success');
+   res.locals.error = req.flash('error');
+   next();
+});
+
+
+
 //Routes
 app.use(showroomRoutes);
 app.use(commentRoutes);
