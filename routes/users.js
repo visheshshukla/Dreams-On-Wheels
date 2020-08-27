@@ -82,6 +82,90 @@ router.get("/logout",function(req,res) {
 	req.flash("success", "Logged Out Sucessfully.")
 	res.redirect("/showrooms");
 });
+//Profile Page
+router.get("/users/:id",function(req,res) {
+	//finding user by id and passing data of foundUser then redirecting to profile page
+	User.findById(req.params.id, function(err, foundUser){
+		if(err){
+			req.flash("error", "User Not Found.");
+			res.redirect('back');			
+		}
+		else{
+			//finding all campgrounds linked to user
+			Showroom.find().where('user.id').equals(foundUser._id).exec(function(err, foundShowrooms){
+			if(err){
+				req.flash("error", "User Not Found.");
+				res.redirect('back');
+			}
+			else{
+			res.render("user" , {user: foundUser, showrooms: foundShowrooms});
+			}
+			});
+		}
+	});
+});
+
+//Edit Profile
+router.get("/users/:id/edit", middleware.isRightUserProfile, function(req,res) {
+		User.findById(req.params.id, function(err, foundUser){
+		if(err){
+				req.flash("error","Unable To Edit User Profile.");
+				res.redirect("back");
+		}
+		else{
+			//getting back foundUser based on user id and passing data to page
+				res.render("userEdit",{user: foundUser});
+			}	
+	});
+});
+
+//Update Profile
+router.put("/users/:id", middleware.isRightUserProfile, upload.single('image'), function(req, res) {
+    //cloudinary.v2.uploader.upload(req.file.path, function(err,result) {
+	  User.findById(req.params.id, async function(err, foundUser){
+			if(err){
+				req.flash("error","Profile Edit Failed.");
+				res.redirect("back");
+			}
+			else{
+				if (req.file) {
+				try{
+					if(foundUser.avatarId === "emp")
+						{
+						//uploading new image to cloudinary
+						var result = await cloudinary.v2.uploader.upload(req.file.path);
+						// add cloudinary url and id for the image to the campground object under image property
+						foundUser.avatar = result.secure_url;
+						foundUser.avatarId = result.public_id;	
+					}
+					else{
+						//if user already has a avatar image then deleting it from cloudinary
+						await cloudinary.v2.uploader.destroy(foundUser.avatarId);
+						var result = await cloudinary.v2.uploader.upload(req.file.path);
+						// add cloudinary url and id for the image to the campground object under image property
+						foundUser.avatar = result.secure_url;
+						foundUser.avatarId = result.public_id;
+					}
+				}
+				catch(err){
+					req.flash("error", err.messgae);
+					return res.redirect("back");
+				}
+				}
+				//updating foundUser details
+				foundUser.fname = req.body.user.fname;
+				foundUser.lname = req.body.user.lname;
+				foundUser.dob = req.body.user.dob;
+				foundUser.email = req.body.user.email;
+				foundUser.about = req.body.user.about;
+				//saving the updated data of foundUser
+				foundUser.save();
+				req.flash("success","Edited Profile Sucessfully.");
+				res.redirect("/users/" + foundUser._id);
+			}
+	  });
+	});
+//});
 
 
 
