@@ -7,7 +7,7 @@
 		<div style="width: 30%; margin: 30px auto;">
 			<form action="/showrooms/<%= showroom._id %>/comments" method="POST">
 				<div class="form-group">
-					<input class="form-control" type="text" placeholder="Comment" name="comment[text]">
+					<textarea class="form-control" rows="3" type="text" placeholder="Comment" name="comment[text]">
 				</div>
 				<div class="form-group">	
 					<button class="btn btn-lg btn-primary btn-block">Submit</button>
