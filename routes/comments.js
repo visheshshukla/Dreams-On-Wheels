@@ -152,7 +152,7 @@ router.put("/showrooms/:id/comments/:c_id", middleware.isRightUserComment, funct
 				foundShowroom.comments.push(comment);
 				//saving showroom
 				foundShowroom.save();
-				req.flash("success","Added Updated Successfully.");
+				req.flash("success","Comment Updated Successfully.");
 				res.redirect("/showrooms/"+foundShowroom._id);
 				}
 			});
