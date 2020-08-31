@@ -14,6 +14,7 @@ var User	    	= require("./models/user.js");
 var showroomRoutes  = require("./routes/showrooms.js");
 var commentRoutes   = require("./routes/comments.js");
 var userRoutes      = require("./routes/users.js");
+var path = require('path');
 
 mongoose.connect(`mongodb+srv://Admin:${process.env.MONGO}@cluster.ilj5v.mongodb.net/Dreams_On_Wheels?retryWrites=true&w=majority`,{
 useNewUrlParser: true,
