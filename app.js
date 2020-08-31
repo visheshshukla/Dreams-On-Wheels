@@ -21,7 +21,8 @@ useUnifiedTopology: true,
 useFindAndModify: false });
 app.set("view engine","ejs");
 app.use(bodyParser.urlencoded({extended: true}));
-app.use(express.static(__dirname + "/public"));
+//app.use(express.static(__dirname + "/public"));
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride("_method"));
 app.use(flash());
 app.use(cors());
