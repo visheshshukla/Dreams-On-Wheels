@@ -54,7 +54,7 @@ app.use(commentRoutes);
 app.use(userRoutes);
 
 
-app.listen(3000,function() {
+app.listen(process.env.PORT, process.env.IP, function() {
 	console.log("Website has started");
 });
 	
