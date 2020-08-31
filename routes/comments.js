@@ -123,8 +123,8 @@ router.put("/showrooms/:id/comments/:c_id", middleware.isRightUserComment, funct
 		//Create A New Comment
 		var today = new Date();
 		var date = today.getDate()+'-'+(today.getMonth()+1)+'-'+today.getFullYear();
-		var hour   = (today.getHours()+5)%24;
-   		var minute = (today.getMinutes()+30)%60;
+		var hour   = today.getHours();
+   		var minute = today.getMinutes();
 		if (minute+30>=60) { minute = (minute+30)%60; hour = (hour+6)%24;}
 		else { minute = minute+30; hour = (hour+5)%24; }
    		var second = today.getSeconds();
