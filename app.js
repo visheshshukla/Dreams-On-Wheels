@@ -15,8 +15,7 @@ var showroomRoutes  = require("./routes/showrooms.js");
 var commentRoutes   = require("./routes/comments.js");
 var userRoutes      = require("./routes/users.js");
 
-
-mongoose.connect("mongodb://localhost/Dreams_On_Wheels",{
+mongoose.connect(`mongodb+srv://Admin:${process.env.MONGO}@cluster.ilj5v.mongodb.net/Dreams_On_Wheels?retryWrites=true&w=majority`,{
 useNewUrlParser: true,
 useUnifiedTopology: true,
 useFindAndModify: false });
@@ -26,7 +25,6 @@ app.use(express.static(__dirname + "/public"));
 app.use(methodOverride("_method"));
 app.use(flash());
 app.use(cors());
-
 
 
 //Passport Configuration
@@ -41,7 +39,6 @@ passport.use(new localStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-
 //Middleware
 //Passing User Login Info To All Routes And Header(Login, Logout)
 app.use(function(req, res, next){
@@ -50,8 +47,6 @@ app.use(function(req, res, next){
    res.locals.error = req.flash('error');
    next();
 });
-
-
 
 //Routes
 app.use(showroomRoutes);

@@ -20,7 +20,12 @@ var imageFilter = function (req, file, cb) {
 };
 var upload = multer({ storage: storage, fileFilter: imageFilter});
 
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+var cloudinary = require('cloudinary');
+cloudinary.config({ 
+  cloud_name: 'vishesh123', 
+  api_key: process.env.CLOUDINARY_KEY, 
+  api_secret: process.env.CLOUDINARY_SECRET
+});
 
 //=========================================================
 //Index Routes
@@ -39,7 +44,7 @@ router.post("/register", function(req,res) {
 	var newUser = new User({username: req.body.username, 
 	fname: "", lname: "", avatar: "https://res.cloudinary.com/vishesh123/image/upload/v1589820758/avatar_ncyywy.png", 			avatarId: "emp" , dob: "", email: "", about: ""});
 	//checking and Giving Admin Right To User
-	if(req.body.adminPassword == 'godmode')
+	if(req.body.adminPassword == process.env.ADMIN_SECRET)
 		{
 			newUser.admin = true;
 		}
@@ -82,6 +87,7 @@ router.get("/logout",function(req,res) {
 	req.flash("success", "Logged Out Sucessfully.")
 	res.redirect("/showrooms");
 });
+
 //Profile Page
 router.get("/users/:id",function(req,res) {
 	//finding user by id and passing data of foundUser then redirecting to profile page
@@ -166,7 +172,6 @@ router.put("/users/:id", middleware.isRightUserProfile, upload.single('image'), 
 	  });
 	});
 //});
-
 
 
 

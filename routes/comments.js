@@ -33,6 +33,20 @@ router.post("/showrooms/:id/comments", middleware.isLoggedIn, function(req,res) 
 		}
 		else{
 		//Create Comment
+		var today = new Date();
+		var date = today.getDate()+'-'+(today.getMonth()+1)+'-'+today.getFullYear();
+		var hour   = (today.getHours()+5)%24;
+   		var minute = (today.getMinutes()+30)%60;
+   		var second = today.getSeconds();
+   		var ap = "AM";
+   		if (hour   > 11) { ap = "PM";             }
+   		if (hour   > 12) { hour = hour - 12;      }
+   		if (hour   == 0) { hour = 12;             }
+   		if (hour   < 10) { hour   = "0" + hour;   }
+   		if (minute < 10) { minute = "0" + minute; }
+   		if (second < 10) { second = "0" + second; }
+   		var timeString = hour + ':' + minute + ':' + second + " " + ap;
+		var dateTime = timeString+' '+date;
 		Comment.create(req.body.comment, function(err, comment){
 			if(err){
 					req.flash("error","Unable To Add Comment.");
@@ -44,6 +58,8 @@ router.post("/showrooms/:id/comments", middleware.isLoggedIn, function(req,res) 
 				comment.author.id = req.user._id;
 				//req.user.username from local variables from app.js
 				comment.author.username = req.user.username; 
+				//adding time and date to comment
+				comment.time = dateTime;
 				//save comment
 				comment.save();
 				//saving comment to showroom for data association
@@ -75,16 +91,73 @@ router.get("/showrooms/:id/comments/:c_id/edit", middleware.isRightUserComment ,
 
 //Update Comment
 router.put("/showrooms/:id/comments/:c_id", middleware.isRightUserComment, function(req,res) {
-	//finding comment based on comment id and passing updated data
-	Comment.findByIdAndUpdate(req.params.c_id, req.body.comment , function(err, foundComment){
+	let u;
+	let uid;
+	//Retrieve UserName and User Id
+	Comment.findById(req.params.c_id, function(err, foundComment){
 		if(err){
-			req.flash("error","Unable To Edit Comment.");
-			res.redirect("back");
+			req.flash("error","Unable To Update Comment.");
+			res.redirect("/showrooms");
 		}
 		else{
-			req.flash("success","Edited Comment Successfully.");
-			res.redirect("/showrooms/" + req.params.id);
+			uid=foundComment.author.id;
+			u=foundComment.author.username;
 		}
+	});
+	//Delete Comment	
+	Comment.findByIdAndRemove(req.params.c_id, function(err){
+		if(err){
+			req.flash("error","Unable To Update Comment.");
+			res.redirect("back");
+		}
+	});
+	//New Comment
+	Showroom.findById(req.params.id, function(err, foundShowroom){
+		if(err){
+			req.flash("error","Unable To Update Comment.");
+			res.redirect("/showrooms");
+		}
+		else{
+		//Create A New Comment
+		var today = new Date();
+		var date = today.getDate()+'-'+(today.getMonth()+1)+'-'+today.getFullYear();
+		var hour   = (today.getHours()+5)%24;
+   		var minute = (today.getMinutes()+30)%60;
+   		var second = today.getSeconds();
+   		var ap = "AM";
+   		if (hour   > 11) { ap = "PM";             }
+   		if (hour   > 12) { hour = hour - 12;      }
+   		if (hour   == 0) { hour = 12;             }
+   		if (hour   < 10) { hour   = "0" + hour;   }
+   		if (minute < 10) { minute = "0" + minute; }
+   		if (second < 10) { second = "0" + second; }
+   		var timeString = hour + ':' + minute + ':' + second + " " + ap;
+		var dateTime = timeString+' '+date;
+		Comment.create(req.body.comment, function(err, comment){
+			if(err){
+					req.flash("error","Unable To Update Comment.");
+					console.log(err);
+					}
+			else{
+				//add username and id to commnet
+				//req.user._id from local variables from app.js
+				comment.author.id = uid;
+				//req.user.username from local variables from app.js
+				comment.author.username = u; 
+				//adding time and date to comment
+				comment.time = dateTime;
+				//save comment
+				comment.save();
+				//saving comment to showroom for data association
+				foundShowroom.comments.push(comment);
+				//saving showroom
+				foundShowroom.save();
+				req.flash("success","Added Updated Successfully.");
+				res.redirect("/showrooms/"+foundShowroom._id);
+				}
+			});
+			
+			}
 	});
 });
 

@@ -67,7 +67,6 @@ middlewareObj.isRightUserComment = function(req, res, next){
 	}
 }
 
-
 middlewareObj.isRightUserProfile = function(req, res, next){
 	if(req.isAuthenticated()){
 		User.findById(req.params.id, function(err, foundUser){
@@ -92,6 +91,5 @@ middlewareObj.isRightUserProfile = function(req, res, next){
 		res.redirect("back");	
 	}
 }
-
 
 module.exports = middlewareObj;
