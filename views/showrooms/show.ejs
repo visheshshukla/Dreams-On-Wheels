@@ -1,8 +1,8 @@
 <%- include("../partials/header.ejs")%>
 
-<div class="container">
-	<div class="row">
-		<div class="col-md-3">
+<div class="container main-container">
+	<div class="row fb-container" >
+		<div class="col-md-3 map-container" >
 			<p class="lead">Showrooms</p>
 			<div class="list-group">
 				<li class="list-group-item active">Info 1</li>
@@ -14,7 +14,7 @@
 				<span id="longitude"><%=showroom.longitude %></span>, <span id="latitude"><%=showroom.latitude%></span>
 			</div>
 		</div>
-		<div class="col-md-9">
+		<div class="col-md-9 show-container">
 			<div class="thumbnail">
 				<img class="img-responsive" src= "<%= showroom.image%>">
 				<div class="caption-full">

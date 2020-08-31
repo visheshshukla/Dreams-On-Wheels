@@ -34,3 +34,19 @@ input[type=number]::-webkit-outer-spin-button {
 	width: 100%; 
 	margin-top: 1rem;
 }
+
+@media screen and (max-width: 1000px) {
+    .fb-container { display: flex; flex-direction: column; flex-wrap: wrap; justify-content: center;}
+    .map-container { order: 2; }
+    .show-container { order: 1;  }
+}
+
+@media screen and (min-width: 1200px) {
+    .main-container { width: 1380px; }
+}
+
+@media screen and (max-width: 767px) {
+    .navbar-right { display: flex; }
+	.container-fluid { display: flex;
+    justify-content: space-between; }
+}
