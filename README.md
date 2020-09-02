@@ -2,7 +2,7 @@
 
 **<ins>Full Stack Project On Exclusive Cars And Bikes Showroom Catalogue.</ins>**
 
-**Welcome to Dreams On Wheels Project. Dreams On Wheels is a website which can satisfy all you vehicles needs. Weather it's a new car or a new bike, this site can help you  purchase you new ride from all the the top showrooms. The website features the list of all cars and bikes showrooms and their information. Users can also make account to post new showrooms or leave reviews to existing showrooms. So what are you waiting for.. pick the ride of your dreams.**
+**Welcome to Dreams On Wheels Project. Dreams On Wheels is a website which can satisfy all you vehicles needs. Whether it's a new car or a new bike, this site can help you  purchase you new ride from all the the top showrooms. The website features the list of all cars and bikes showrooms and their information. Users can also make account to post new showrooms or leave reviews to existing showrooms. So what are you waiting for.. find the showroom best for you and pick the ride of your dreams.**
 
 **Check It Out At-**  https://dreams-on-wheels.herokuapp.com/   **(live hosting @Heroku.)**
 
@@ -10,7 +10,7 @@
 
 **Sign Up and Add New User by providing Email-Id and Password.  ||  Add Information and Picture to User Profile.**
 
-**Edit and View User Profile.  ||  Login and Logout with User Credentials.**
+**Edit and View User Profile.  ||  Login with User Credentials and Logout.**
 
 **Login and Add New Showrooms.  ||  Add New Showrooms by providing Showroom Information and Pictures.**
 
@@ -20,13 +20,13 @@
 
 **Logged-In Users can add Comments/Reviews to Showrooms.**
 
-**Logged-In Users can Edit and Delete Comments/Reviews to Showroom.**
+**Logged-In Users can Edit and Delete Comments/Reviews from Showrooms.**
 
 **Showrooms, Comments/Reviews and User Profile are associated to User and can only be Edited and Deleted by the User who owns them.**
 
 **A User can be made Admin User by providing the Secret Key.**
 
-**Admin Users can Edit and Delete Showrooms and Comments added by any User.**
+**Admin Users can Edit and Delete Showrooms and Comments?Reviews added by any User.**
 
 **<ins>Technologies Used-</ins>**
 
