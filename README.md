@@ -18,11 +18,15 @@
 
 **All Users(Logged-In and Non-Logged-In) can view Showrooms and it's details(including Location on Map And Reviews).**
 
-**Logged-In Users can add Comments/Reviews to Showrooms.  ||  Logged-In Users can Edit and Delete Comments/Reviews to Showroom.**
+**Logged-In Users can add Comments/Reviews to Showrooms.**
+
+**Logged-In Users can Edit and Delete Comments/Reviews to Showroom.**
 
 **Showrooms, Comments/Reviews and User Profile are associated to User and can only be Edited and Deleted by the User who owns them.**
 
-**A User can be made Admin User by providing the Secret Key.  ||  Admin Users can Edit and Delete Showrooms and Comments added by any User.**
+**A User can be made Admin User by providing the Secret Key.**
+
+**Admin Users can Edit and Delete Showrooms and Comments added by any User.**
 
 **<ins>Technologies Used-</ins>**
 
