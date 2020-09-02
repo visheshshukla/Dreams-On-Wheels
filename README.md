@@ -6,56 +6,33 @@
 
 **Features of the website-**
 
-***Sign Up and Add New User by providing Email-Id and Password. || *Add Information and Picture to User Profile.**
+**Sign Up and Add New User by providing Email-Id and Password.  ||  Add Information and Picture to User Profile.**
 
-*Edit and View User Profile.
+**Edit and View User Profile.  ||  Login and Logout with User Credentials.**
 
-*Login and Logout with User Credentials.
+**Login and Add New Showrooms.  ||  Add New Showrooms by providing Showroom Information and Pictures.**
 
-*Login and Add New Showrooms.
+**Add Map Location to Showrooms. ||  *Logged-In Users can Edit and Delete Showrooms.**
 
-*Add New Showrooms by providing Showroom Information and Pictures.
+**All Users(Logged-In and Non-Logged-In) can view Showrooms and it's details(including Location on Map And Reviews).**
 
-*Add Map Location to Showrooms.
+**Logged-In Users can add Comments/Reviews to Showrooms.  ||  *Logged-In Users can Edit and Delete Comments/Reviews to Showroom.**
 
-*Logged-In Users can Edit and Delete Showrooms.
+**Showrooms, Comments/Reviews and User Profile are associated to User and can only be Edited and Deleted by the User who owns them.**
 
-*All Users(Logged-In and Non-Logged-In) can view Showrooms and it's details(including Location on Map And Reviews).
+**A User can be made Admin User by providing the Secret Key.  ||  Admin Users can Edit and Delete Showrooms and Comments added by any User.**
 
-*Logged-In Users can add Comments/Reviews to Showrooms.
+**<ins>Technologies Used-</ins>**
 
-*Logged-In Users can Edit and Delete Comments/Reviews to Showroom.
+**Frontend- Using HTML, JavaScript, CSS, Bootstrap.  ||  Backend- Using Node Js.  ||   Database- MongoDB Atlas.**
 
-*Showrooms, Comments/Reviews and User Profile are associated to User and can only be Edited and Deleted by the User who owns them.
+**<ins>Packages and API's Used-</ins>**
 
-*A User can be made Admin User by providing the Secret Key.
+**Express as Web Framework.  ||  Mongoose for MongoDB   || Router for Routing Information.**
 
-*Admin Users can Edit and Delete Showrooms and Comments added by any User.
+**Passport for User Authentication(Login).  ||  Multer  for Image Uploads.  ||  Cloudinary for Storing Images on Cloud.**
 
-
-Technologies Used-
-
-Frontend- Using HTML, JavaScript, CSS, Bootstrap.
-
-Backend- Using Node Js.
-
-Packages and API's Used.
-
-*Express as Web Framework.
-
-*Mongodb for Database.
-
-*Router for Routing Information.
-
-*Passport for User Authentication(Login).
-
-*Multer  for Image Uploads.
-
-*Cloudinary for Storing Images on Cloud.
-
-*Flash for Flash Messages.
-
-*Mapbox for Location of Showroom on Map.**
+**Flash for Flash Messages.  ||  Mapbox for Location of Showroom on Map.**
 
 **Desktop View-**
 
