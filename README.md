@@ -6,7 +6,7 @@
 
 **<ins>Check It Out At</ins> -**  https://dreams-on-wheels.herokuapp.com/   **(live hosting @Heroku.)**
 
-**<ins>Features of the website-</ins>**
+**<ins>Features of the website</ins> -**
 
 **Sign Up and Add New User by providing Email-Id and Password.  ||  Add Information and Picture to User Profile.**
 
@@ -28,11 +28,11 @@
 
 **Admin Users can Edit and Delete Showrooms and Comments?Reviews added by any User.**
 
-**<ins>Technologies Used-</ins>**
+**<ins>Technologies Used</ins> -**
 
 **Frontend- Using HTML, JavaScript, CSS, Bootstrap.  ||  Backend- Using Node Js.  ||   Database- MongoDB Atlas.**
 
-**<ins>Packages and API's Used-</ins>**
+**<ins>Packages and API's Used</ins> -**
 
 **Express as Web Framework.  ||  Mongoose for MongoDB   || Router for Routing Information.**
 
@@ -40,7 +40,7 @@
 
 **Flash for Flash Messages.  ||  Mapbox for Location of Showroom on Map.**
 
-**<ins>Desktop View-</ins>**
+**<ins>Desktop View</ins> -**
 
 <img src="Screenshots/1.png" width="825"> 
 
@@ -62,6 +62,6 @@
 
 <img src="Screenshots/12.png" width="825">
 
-**<ins>Mobile View-</ins>**
+**<ins>Mobile View</ins> -**
 
 <img src="Screenshots/15.png" width="275"> <img src="Screenshots/16.png" width="275"> <img src="Screenshots/17.png" width="275">
