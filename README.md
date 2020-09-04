@@ -4,7 +4,7 @@
 
 **Welcome to Dreams On Wheels Project. Dreams On Wheels is a website which can satisfy all you vehicles needs. Whether it's a new car or a new bike, this site can help you  purchase you new ride from all the the top showrooms. The website features the list of all cars and bikes showrooms and their information. Users can also make account to post new showrooms or leave reviews to existing showrooms. So what are you waiting for.. find the showroom best for you and pick the ride of your dreams.**
 
-**<ins>Check It Out At</ins> -**  https://dreams-on-wheels.herokuapp.com/   **(live hosting @Heroku.)**
+**<ins>Check It Out At</ins> -**  https://dreams-on-wheels.herokuapp.com/   **(live hosting @Heroku).**
 
 **<ins>Features of the website</ins> -**
 
