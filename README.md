@@ -6,7 +6,7 @@
 
 **<ins>Check It Out At</ins> -**  https://dreams-on-wheels.herokuapp.com/   **(live hosting @Heroku).**
 
-**<ins>Features of the website</ins> -**
+**<ins>Features Of The Website</ins> -**
 
 **Sign Up and Add New User by providing Email-Id and Password.  ||  Add Information and Picture to User Profile.**
 
