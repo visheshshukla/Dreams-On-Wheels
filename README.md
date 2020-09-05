@@ -2,7 +2,7 @@
 
 **<ins>Full Stack Project On Exclusive Cars And Bikes Showroom Catalogue.</ins>**
 
-**Welcome to Dreams On Wheels Project. Dreams On Wheels is a website which can satisfy all you vehicles needs. Whether it's a new car or a new bike, this site can help you  purchase you new ride from all the the top showrooms. The website features the list of all cars and bikes showrooms and their information. Users can also make account to post new showrooms or leave reviews to existing showrooms. So what are you waiting for.. find the showroom best for you and pick the ride of your dreams.**
+**Welcome to Dreams On Wheels Project. Dreams On Wheels is a One Stop Website for Exclusive Cars And Bikes Showroom. Whether it's a new Car or a new Bike, this site can help you purchase you Exclusive ride. Showroom here feature Cars And Bikes from all the Top Brands. The Website features the list of Cars and Bikes Showrooms and their Information. Users can also make Account to post new Showrooms or leave Reviews to existing Showrooms. So what are you waiting for.. find the Showroom that suits you best and pick the Ride of your Dreams.**
 
 **<ins>Check It Out At</ins> -**  https://dreams-on-wheels.herokuapp.com/   **(live hosting @Heroku).**
 
