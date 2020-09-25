@@ -26,7 +26,7 @@
 
 **A User can be made Admin User by providing the Secret Key.**
 
-**Admin Users can Edit and Delete Showrooms and Comments?Reviews added by any User.**
+**Admin Users can Edit and Delete Showrooms and Comments/Reviews added by any User.**
 
 **<ins>Technologies Used</ins> -**
 
